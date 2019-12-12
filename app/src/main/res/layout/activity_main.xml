@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="account"
+            type="com.fishinwater.mvc_mvp_mvvm.clazz.Account" />
+        <variable
+            name="activity"
+            type="com.fishinwater.mvc_mvp_mvvm.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        >
+
+        <TextView
+            android:id="@+id/tv_ifo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{account.name + '|' + account.introduce}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/data_binding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="on click"
+            app:layout_constraintTop_toBottomOf="@id/tv_ifo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{activity.onClick}"/>
+
+        <Button
+            android:id="@+id/mvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mvc"
+            app:layout_constraintTop_toBottomOf="@id/data_binding"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{activity.onClick}"/>
+
+        <Button
+            android:id="@+id/mvp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mvp"
+            app:layout_constraintTop_toBottomOf="@id/mvc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{activity.onClick}"/>
+
+        <Button
+            android:id="@+id/mvvm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mvvm"
+            app:layout_constraintTop_toBottomOf="@id/mvp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{activity.onClick}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
